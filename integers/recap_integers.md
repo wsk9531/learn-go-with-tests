@@ -1,0 +1,13 @@
+### Learnings
+- More of the Write Test, Code til pass, refactor process
+- Integers and addition
+- using different format strings (%d instead of %q for integers)
+    - much like when learning C, nice similarity.
+- didn't name the return variable in Add() because it is clear
+    - learned comments above functions are included in godoc.
+- defined a new package 'integers'
+    - packages form of grouping functions
+- writing Examples and running them with 'go test'
+    - need a comment // Output: x for it to run in test suite
+    - if example fails, build fails
+- go test -v. It's verbosin' time.
