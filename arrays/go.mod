@@ -1,3 +1,3 @@
-module arrays_and_slices
+module arrays
 
 go 1.18
