@@ -28,9 +28,13 @@ Array sizes are encoded into their type.
 
 [4]int passed to a function expecting [5]int will not compile.
 
-**SLICES** are used for this reason, they can have any size and do not encode the size of the collection.
+**SLICES** are used for this reason, they have a FIXED size but  and do not encode the size of the collection.
+
+We can create new ones from old ones using append()!
 
 Slices look like []type e.g. []int is a slice of integers.
+Can use other types. Can even use arrays/slice type slices 
+e.g. [][]string
 
 In writing the Sum function, I could either create a new function to handle slice inputs, or break the existing function by changing the argument from an array to a slice.
 
@@ -65,4 +69,12 @@ However, it is not type safe!!!
 ## Red, Green, Blue
 RED: Add test for SumAll - function that takes in any number of slices
 GREEN: Add code to call Sum() for each slice, add each result to a slice called sums
-BLUE: Refactor to worry less about capacity, thanks to the append function, which takes a slice and new value, returns a NEW slice with all the items in it.
+BLUE: Refactor to worry less about capacity, thanks to the append function, which takes a slice and new value, returns a NEW slice with all the items in it. Refactored TestSumAllTails to remove duplicate equality checks.
+
+## Helpful links from the LGWT chapter:
+https://blog.golang.org/go-slices-usage-and-internals
+
+https://go.dev/play/p/bTrRmYfNYCp 
+Covers slicing an array and changing how slice effects original array, but copies do not affect the original.
+https://play.golang.org/p/Poth8JS28sc
+Why it's good to make a copy of a slice after slicing a large slice
